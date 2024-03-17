@@ -1,8 +1,8 @@
-import jsonData from "../../../../public/projects.json";
+import { loadData } from "./load-data";
 
-export function initialDataWork() {
+export async function initialDataWork() {
+  const jsonData = await loadData();
   const template = document.querySelector('[data-template="project-card"]').content;
-
   const parentElement = document.querySelector('[data-project="parent"]');
   parentElement.style.opacity = 1;
 
